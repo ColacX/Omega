@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Camera.h" />
+    <ClInclude Include="source\CircleConnector.h" />
     <ClInclude Include="source\ColladaParser.h" />
     <ClInclude Include="source\CubePiece.h" />
     <ClInclude Include="source\DesignScene.h" />

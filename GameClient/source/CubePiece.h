@@ -35,7 +35,7 @@ struct CubePiece : Piece
 		{
 			auto& n = node->second;
 
-			glm::mat4 model = glm::translate(pieces[ia]->position);
+			glm::mat4 model = glm::translate(pieces[ia]->position) * glm::toMat4(pieces[ia]->rotation);
 			glm::mat4 pvmMatrix = camera->ProjectionViewMatrix() * model;
 			glUniformMatrix4fv(glGetUniformLocation(shader, "pvmMatrix"), 1, false, glm::value_ptr(pvmMatrix));
 
@@ -67,11 +67,12 @@ struct CubePiece : Piece
 	{
 		for (int ia = 0; ia < circleConnectors.size(); ia++)
 		{
-			CircleConnector* c = new CircleConnector();
-			c->position = circleConnectors[ia].position + this->position;
-			c->normal = circleConnectors[ia].normal;
-			c->rotation = circleConnectors[ia].rotation;
-			sceneConnectors.push_back(c);
+			CircleConnector* item = new CircleConnector();
+			auto& c = circleConnectors[ia];
+			item->position = this->rotation * c.position + this->position;
+			item->normal = this->rotation * c.normal;
+			item->rotation = this->rotation * c.rotation;
+			sceneConnectors.push_back(item);
 		}
 	}
 };

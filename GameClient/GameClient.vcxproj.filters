@@ -11,6 +11,7 @@
     <ClInclude Include="source\SplashScene.h" />
     <ClInclude Include="source\DesignScene.h" />
     <ClInclude Include="source\CubePiece.h" />
+    <ClInclude Include="source\CircleConnector.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="script\textured.glsl" />
