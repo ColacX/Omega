@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2015-02-27T19:46:28Z</created><keywords></keywords><modified>2015-02-27T19:46:28Z</modified><revision></revision><subject></subject><title></title><unit meter="1.000000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
+  <library_geometries>
+    <geometry id="Plane001-lib" name="Plane001Mesh">
+      <mesh>
+        <source id="Plane001-POSITION">
+          <float_array id="Plane001-POSITION-array" count="18">
+-21.788940 -26.941284 0.000000
+21.788940 -26.941284 0.000000
+-21.788940 26.941284 0.000000
+21.788940 26.941284 0.000000
+21.788940 26.941284 0.000000
+-21.788940 -26.941284 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane001-POSITION-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane001-Normal0">
+          <float_array id="Plane001-Normal0-array" count="18">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane001-Normal0-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane001-UV0">
+          <float_array id="Plane001-UV0-array" count="12">
+0.750000 0.750000
+1.000000 0.750000
+0.750000 1.000000
+1.000000 1.000000
+1.000000 1.000000
+0.750000 0.750000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane001-UV0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane001-VERTEX">
+          <input semantic="POSITION" source="#Plane001-POSITION"/>
+          <input semantic="NORMAL" source="#Plane001-Normal0"/>
+          <input semantic="TEXCOORD" source="#Plane001-UV0"/>
+        </vertices>
+        <triangles count="2"><input semantic="VERTEX" offset="0" source="#Plane001-VERTEX"/><p> 2 0 3 1 4 5</p></triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="plane0" name="plane0">
+      <node name="Plane001" id="Plane001" sid="Plane001"><matrix sid="matrix">0.025400 0.000000 0.000000 0.033737 0.000000 0.000000 0.025400 0.000000 0.000000 -0.025400 0.000000 0.599849 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#Plane001-lib"/><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <extra><technique profile="MAX3D"><frame_rate>30.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.000000</start_time><end_time>3.333333</end_time></technique></extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#plane0"></instance_visual_scene>
+  </scene>
+</COLLADA>
