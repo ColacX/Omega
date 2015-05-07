@@ -1,14 +1,18 @@
 #pragma once
 
+#include "Entity.h"
+
 struct DesignScene
 {
 	Camera camera, flatCamera;
 	CrossAim crossAim;
 	std::vector<CubePiece*> cubePieces;
 	std::vector<CircleConnector*> sceneConnectors;
+	Entity entity;
 
 	void Construct(int windowWidth, int windowHeight)
 	{
+		
 		camera.Perspective(windowWidth, windowHeight);
 		flatCamera.Flat(windowWidth, windowHeight);
 		CrossAim::Load();

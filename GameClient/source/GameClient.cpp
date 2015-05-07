@@ -5,7 +5,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-//external librarys
+//external libraries
 #include <Windows.h>
 
 #include <GL\glew.h>
@@ -26,14 +26,14 @@
 
 #include <glm/gtc/type_ptr.hpp>
 
-//standard librarys
+//standard libraries
 #include <iostream>
 #include <stdio.h>
 #include <vector>
 #include <chrono>
 #include <unordered_map>
 
-//custum librarys
+//custom libraries
 #include <XmlParser.h>
 #include <SafeFile.h>
 #pragma comment(lib, "PrimitiveLibrary.lib")
@@ -41,6 +41,7 @@
 #include "ColladaParser.h"
 #include "GameLibrary.h"
 #include "Camera.h"
+#include "Piece.h"
 
 class HitBox
 {
@@ -85,74 +86,7 @@ class PointConnector
 };
 
 #include "CircleConnector.h"
-
-struct Piece
-{
-	glm::vec3 position;
-	glm::quat rotation;
-};
-
-class Entity
-{
-	glm::vec3 position;
-	glm::quat rotation;
-	std::vector<Piece*> pieces;
-	std::unordered_map<Piece*, std::vector<Piece*>> ties;
-};
-
-class EntityService
-{
-	void Hit(Entity* shooter, Entity* victim)
-	{
-		glm::toQuat(glm::lookAt(glm::vec3(), glm::vec3(-1,0,0), glm::vec3(0, 1, 0)));
-	}
-};
-
 #include "CubePiece.h"
-
-struct BlockPiece : Piece
-{
-	static void BatchRender(const std::vector<BlockPiece*> pieces)
-	{
-	}
-};
-
-struct WheelPiece : Piece
-{
-	glm::quat rotation;
-
-	static void BatchRender(const std::vector<WheelPiece*> pieces)
-	{
-	}
-};
-
-struct HoverPiece : Piece
-{
-	glm::quat rotation;
-
-	static void BatchRender(const std::vector<HoverPiece*> pieces)
-	{
-	}
-};
-
-struct HumanLegPiece : Piece
-{
-	glm::quat rotation;
-
-	static void BatchRender(const std::vector<HumanLegPiece*> pieces)
-	{
-	}
-};
-
-struct SpiderLegPiece : Piece
-{
-	glm::quat rotation;
-
-	static void BatchRender(const std::vector<HoverPiece*> pieces)
-	{
-
-	}
-};
 
 struct BoundingBox
 {
