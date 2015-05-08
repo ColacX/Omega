@@ -4,7 +4,6 @@
     <ClInclude Include="include\XmlParser.h" />
     <ClInclude Include="include\SafeFile.h" />
     <ClInclude Include="include\ColladaParser.h" />
-    <ClInclude Include="include\Mathematic.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\SafeFile.cpp" />

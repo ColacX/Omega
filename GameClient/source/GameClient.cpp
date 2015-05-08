@@ -3,28 +3,7 @@
 //y up
 //z outwards
 
-#define _CRT_SECURE_NO_WARNINGS
-
-//external libraries
-#include <Windows.h>
-
-#include <GL\glew.h>
-#pragma comment(lib, "glew32.lib")
-
-#include <gl\GL.h>
-#pragma comment(lib, "opengl32.lib")
-
-#include <SDL.h>
-#pragma comment(lib, "SDL2.lib")
-#undef main
-
-#include <SDL_image.h>
-#pragma comment(lib, "SDL2_image.lib")
-
-#include <SDL_ttf.h>
-#pragma comment(lib, "SDL2_ttf.lib")
-
-#include <glm/gtc/type_ptr.hpp>
+#include "GraphicLibrary.h"
 
 //standard libraries
 #include <iostream>
@@ -38,28 +17,21 @@
 #include <SafeFile.h>
 #pragma comment(lib, "PrimitiveLibrary.lib")
 
+#include "Resource.h"
+
 #include "ColladaParser.h"
-#include "GameLibrary.h"
 #include "Camera.h"
 #include "Piece.h"
+#include "CubePiece.h"
+#include "CircleConnector.h"
+#include "Circle.h"
 
-class HitBox
+
+struct Triangle
 {
 	glm::vec3 position;
-	float width, height, depth;
 };
 
-class HitSphere
-{
-	glm::vec3 position;
-	float radius;
-};
-
-class HitCube
-{
-	glm::vec3 position;
-	float size;
-};
 
 class IGround
 {
@@ -84,9 +56,6 @@ class PointConnector
 {
 	glm::vec3 position;
 };
-
-#include "CircleConnector.h"
-#include "CubePiece.h"
 
 struct BoundingBox
 {
@@ -233,6 +202,8 @@ public:
 
 		if (!textFont)
 			throw "TTF_OpenFont";
+
+		Resource::Construct();
 
 		designScene.Construct(windowWidth, windowHeight);
 		camera = &designScene.camera;

@@ -82,19 +82,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Camera.cpp" />
+    <ClCompile Include="source\Circle.cpp" />
+    <ClCompile Include="source\CircleConnector.cpp" />
+    <ClCompile Include="source\ColladaParser.cpp" />
+    <ClCompile Include="source\CubePiece.cpp" />
+    <ClCompile Include="source\Entity.cpp" />
     <ClCompile Include="source\GameClient.cpp" />
+    <ClCompile Include="source\GameLibrary.cpp" />
+    <ClCompile Include="source\HoverPiece.cpp" />
+    <ClCompile Include="source\Resource.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Arrow.h" />
+    <ClInclude Include="source\HeaderTypes.h" />
     <ClInclude Include="source\Camera.h" />
+    <ClInclude Include="source\Circle.h" />
     <ClInclude Include="source\CircleConnector.h" />
     <ClInclude Include="source\ColladaParser.h" />
     <ClInclude Include="source\CubePiece.h" />
     <ClInclude Include="source\DesignScene.h" />
     <ClInclude Include="source\Entity.h" />
     <ClInclude Include="source\GameLibrary.h" />
+    <ClInclude Include="source\GraphicLibrary.h" />
+    <ClInclude Include="source\HoverPiece.h" />
+    <ClInclude Include="source\Piece.h" />
+    <ClInclude Include="source\Resource.h" />
     <ClInclude Include="source\SplashScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="script\circle.glsl" />
     <None Include="script\textured.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

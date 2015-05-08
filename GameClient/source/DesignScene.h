@@ -12,12 +12,12 @@ struct DesignScene
 
 	void Construct(int windowWidth, int windowHeight)
 	{
-		
 		camera.Perspective(windowWidth, windowHeight);
 		flatCamera.Flat(windowWidth, windowHeight);
 		CrossAim::Load();
 		CubePiece::Load();
 		CircleConnector::Load();
+		Circle::Construct();
 
 		for (int ia = 0; ia < 1; ia++)
 		{
@@ -61,6 +61,9 @@ struct DesignScene
 		{
 			CircleConnector::BatchRender({ closestConnector }, &camera);
 		}
+
+		Circle c;
+		Circle::BatchRender({ &c }, camera.ProjectionViewMatrix());
 
 		CrossAim::BatchRender({ &crossAim }, &flatCamera);
 	}

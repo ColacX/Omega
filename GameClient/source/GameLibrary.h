@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BasicTypes.h"
+#include "HeaderTypes.h"
 
 void ReadFile(const char* filePath, char*& bufferPointer, unsigned int& fileSize);
 

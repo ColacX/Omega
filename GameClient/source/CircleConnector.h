@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BasicTypes.h"
+#include "HeaderTypes.h"
 #include "ColladaParser.h"
 #include "Camera.h"
 
